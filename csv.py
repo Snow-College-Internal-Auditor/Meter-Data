@@ -75,10 +75,11 @@ def variableMeters():
     for i in range(numberOfMeters):
         meter = input("Meter number: ")
         meterarray.append(meter)
-        print(meterarray)
-        #webbrowser.open('https://summary.ekmmetering.com/summary?key=NjUyMjA2ODE6R2JXZEluYWw&meters=' + meter + 
-         #               '&format=html&report=' + dateRange + '&limit=1000&offset=0&timezone=America~Denver&start_date=' + startDate + 
-          #              '&end_date=' + endDate)
+    
+    for j in meterarray:
+        webbrowser.open('https://summary.ekmmetering.com/summary?key=NjUyMjA2ODE6R2JXZEluYWw&meters=' + j + 
+                        '&format=html&report=' + dateRange + '&limit=1000&offset=0&timezone=America~Denver&start_date=' + startDate + 
+                        '&end_date=' + endDate)
 
 #---could make single and variable the same function talk to wayne---#
 
