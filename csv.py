@@ -122,7 +122,7 @@ def singalMeter():
 
 def menu():
     print("1. One meter summary")
-    print("2. multiple meter summary")
+    print("2. set meters summary")
     print("3. Variable meters")
     val = input("Enter number: ")
     choice = int(val)
@@ -133,12 +133,16 @@ def switch(choice):
     if choice == 1:
         singalMeter()
     elif choice == 2:
-        setMeters
+        setMeters()
     elif choice == 3:
         variableMeters()          
 
 
 def main():
-    choice = menu()
-    switch(choice)
+    repeat = 'y'
+
+    while repeat == 'y':
+        choice = menu()
+        switch(choice)
+        repeat = input('Do you want to run another api call? [y/n]: ')
 main()  
