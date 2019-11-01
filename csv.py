@@ -38,7 +38,7 @@ def setMeters():
                         '&end_date=' + endDate)
 
 
-def multipleMeters():
+def variableMeters():
     print("Select time interval")
     print("1. 15 minute intervals")
     print("2. Hour intervals")
@@ -70,12 +70,17 @@ def multipleMeters():
     unserinput = input("How many meters do you want to pull: ")
     numberOfMeters = int(unserinput)
 
+    meterarray = []
+
     for i in range(numberOfMeters):
         meter = input("Meter number: ")
-        webbrowser.open('https://summary.ekmmetering.com/summary?key=NjUyMjA2ODE6R2JXZEluYWw&meters=' + meter + 
-                        '&format=html&report=' + dateRange + '&limit=1000&offset=0&timezone=America~Denver&start_date=' + startDate + 
-                        '&end_date=' + endDate)
+        meterarray.append(meter)
+        print(meterarray)
+        #webbrowser.open('https://summary.ekmmetering.com/summary?key=NjUyMjA2ODE6R2JXZEluYWw&meters=' + meter + 
+         #               '&format=html&report=' + dateRange + '&limit=1000&offset=0&timezone=America~Denver&start_date=' + startDate + 
+          #              '&end_date=' + endDate)
 
+#---could make single and variable the same function talk to wayne---#
 
 def singalMeter():
     meterNumber = input("Please enter the meter number: ")
@@ -129,7 +134,7 @@ def switch(choice):
     elif choice == 2:
         setMeters
     elif choice == 3:
-        multipleMeters()          
+        variableMeters()          
 
 
 def main():
