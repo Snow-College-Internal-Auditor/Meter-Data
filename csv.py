@@ -2,7 +2,13 @@ import webbrowser
 
 
 def setMeters():
-    meters = ['300001306', '350000381']
+    meters = [
+    '350001723', '350001724', '350001725', '350001726', '350001728', '350001729', '350001730', '350001731', '350001732', '350001733', '350001734', '350001736', ]
+    
+    meterString = '350001722'
+
+    for i in meters:
+        meterString = meterString + '~' + i
 
     print("Select time interval")
     print("1. 15 minute intervals")
@@ -32,10 +38,9 @@ def setMeters():
     startDate = input("Enter the start date:" )
     endDate = input("Enter the end date: ")
 
-    for i in meters:
-        webbrowser.open('https://summary.ekmmetering.com/summary?key=NjUyMjA2ODE6R2JXZEluYWw&meters=' + i + 
-                        '&format=html&report=' + dateRange + '&limit=1000&offset=0&timezone=America~Denver&start_date=' + startDate + 
-                        '&end_date=' + endDate)
+    webbrowser.open('https://summary.ekmmetering.com/summary?key=NjUyMjA2ODE6R2JXZEluYWw&meters=' + meterString + 
+                    '&format=html&report=' + dateRange + '&limit=1000&offset=0&timezone=America~Denver&start_date=' + startDate + 
+                    '&end_date=' + endDate)
 
 
 def Meters():
@@ -80,7 +85,6 @@ def Meters():
         webbrowser.open('https://summary.ekmmetering.com/summary?key=NjUyMjA2ODE6R2JXZEluYWw&meters=' + j + 
                         '&format=html&report=' + dateRange + '&limit=1000&offset=0&timezone=America~Denver&start_date=' + startDate + 
                         '&end_date=' + endDate)
-
 
 
 def menu():
