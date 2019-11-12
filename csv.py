@@ -39,7 +39,7 @@ def setMeters():
 
     webbrowser.open('https://summary.ekmmetering.com/summary?key=NjUyMjA2ODE6R2JXZEluYWw&meters=' + meterString + 
                     '&format=html&report=' + dateRange + '&limit=1000&offset=0&timezone=America~Denver&start_date=' + startDate + 
-                    '&end_date=' + endDate)
+                    '&end_date=' + endDate + '&bulk=1')
 
 
 def Meters():
@@ -83,7 +83,7 @@ def Meters():
     for j in meterarray:
         webbrowser.open('https://summary.ekmmetering.com/summary?key=NjUyMjA2ODE6R2JXZEluYWw&meters=' + j + 
                         '&format=html&report=' + dateRange + '&limit=1000&offset=0&timezone=America~Denver&start_date=' + startDate + 
-                        '&end_date=' + endDate)
+                        '&end_date=' + endDate + '&bulk=1')
 
 
 def menu():
