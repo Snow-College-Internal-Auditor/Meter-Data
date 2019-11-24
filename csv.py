@@ -39,9 +39,6 @@ def setMeters():
     meterString2 = '350001464'
     meterString3 = '350002132'
 
-    #'350000415'
-    #'350000400'
-
     for i in meter1:
         meterString1 = meterString1 + '~' + i
 
@@ -80,10 +77,8 @@ def setMeters():
     print("Enter date as YYYYMMDDhhmm")
     print("Example: 201910310930 is 10/31/2019 at 9:30am")
 
-    #----input validation-----
     startDate = input("Enter the start date:" )
     endDate = input("Enter the end date: ")
-    #----input validation-----
 
     webbrowser.open('https://summary.ekmmetering.com/summary?key=NjUyMjA2ODE6R2JXZEluYWw&meters=' + meterString1 + 
                     '&format=html&report=' + dateRange + '&limit=1000&offset=0&timezone=America~Denver&start_date=' + startDate + 
@@ -129,15 +124,16 @@ def Meters():
     print("Enter date as YYYYMMDDhhmm")
     print("Example: 201910310930 is 10/31/2019 at 9:30am")
 
-    #----input validation-----
     startDate = input("Enter the start date:" )
     endDate = input("Enter the end date: ")
-    #----input validation-----
 
-    unserinput = input("How many meters do you want to pull: ")
-    #----input validation-----
-    numberOfMeters = int(unserinput)
-    #----input validation-----
+    userinput = input("How many meters do you want to pull: ")
+    isdigttest = userinput.isdigit()
+    while isdigttest == False:
+        userinput = input("Incorrect input. Can only enter digits. Please re-enter number of meters to pull: ")
+        isdigttest = userinput.isdigit()
+
+    numberOfMeters = int(userinput)
 
     meterarray = []
 
