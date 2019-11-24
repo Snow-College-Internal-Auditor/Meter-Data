@@ -150,10 +150,13 @@ def Meters():
 def menu():
     print("1. set meters summary")
     print("2. Variable meters")
-    #----input validation-----
+
     val = input("Enter number: ")
-    #----input validation-----
+    while val != '1' and val != '2':
+        print(val + ' is not one of the options. Can only select 1 or 2. Please select again.')
+        val = input("Enter: ")
     choice = int(val)
+    
     return choice
 
 
