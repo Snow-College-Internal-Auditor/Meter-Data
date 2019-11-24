@@ -156,7 +156,7 @@ def menu():
         print(val + ' is not one of the options. Can only select 1 or 2. Please select again.')
         val = input("Enter: ")
     choice = int(val)
-    
+
     return choice
 
 
@@ -173,7 +173,9 @@ def main():
     while repeat == 'y':
         choice = menu()
         switch(choice)
-        #----input validation-----
         repeat = input('Do you want to run another api call? [y/n]: ')
-        #----input validation-----
+        while repeat != 'y' and repeat != 'n':
+            print('can only enter y or n')
+            repeat = input('Do you want to run another api call? [y/n]: ')
+    
 main()  
