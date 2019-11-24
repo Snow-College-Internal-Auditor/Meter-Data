@@ -54,7 +54,6 @@ def setMeters():
     print("2. Hour intervals")
     print("3. day intervals")
     print("4. Week intervals")
-    #can set this up with billing cycle. So Sep 15 - Oct 14. Talk to wayne
     print("5. Month intervals")
     userinput = input("Enter: ")
     while userinput != '1' and userinput != '2' and userinput != '3' and userinput !='4' and userinput !='5':
@@ -73,12 +72,35 @@ def setMeters():
     elif interval == 5:
         dateRange = "mo"
 
-    print("Please enter a start and end date for the summary.")
-    print("Enter date as YYYYMMDDhhmm")
-    print("Example: 201910310930 is 10/31/2019 at 9:30am")
+    #if user does not want month summary just go by specific date
+    if interval != 5:
+        print("Please enter a start and end date for the summary.")
+        print("Enter date as YYYYMMDDhhmm")
+        print("Example: 201910310930 is 10/31/2019 at 9:30am")
+        startDate = input("Enter the start date:" )
+        endDate = input("Enter the end date: ")
+    
+    #If user wantes month does billing cycle
+    if interval == 5:
+        print("Please enter a start and end date for the summary.")
+        print("Enter date as YYYYMMDDhhmm")
+        print("Example: 201910310930 is 10/31/2019 at 9:30am")
 
-    startDate = input("Enter the start date:" )
-    endDate = input("Enter the end date: ")
+        print("Please enter a start date for the summary.")
+        startYear = input('Enter year: ')
+        startMonth = input('Enter month: ')
+        startTime = input('Enter time of day: ')
+        startDate = startYear + startMonth + '15' + startTime
+
+        print("Please enter a end date for the summary.")
+        endYear = input('Enter year: ')
+        #----check input----#
+        endMonth = input('Enter month: ')
+        #----check input----#
+        endTime = input('Enter time of day: ')
+        endDate = endYear + endMonth + '14' + endTime
+
+    
 
     webbrowser.open('https://summary.ekmmetering.com/summary?key=NjUyMjA2ODE6R2JXZEluYWw&meters=' + meterString1 + 
                     '&format=html&report=' + dateRange + '&limit=1000&offset=0&timezone=America~Denver&start_date=' + startDate + 
@@ -120,12 +142,33 @@ def Meters():
     elif interval == 5:
         dateRange = "mo"
 
-    print("Please enter a start and end date for the summary.")
-    print("Enter date as YYYYMMDDhhmm")
-    print("Example: 201910310930 is 10/31/2019 at 9:30am")
+    #if user does not want month summary just go by specific date
+    if interval != 5:
+        print("Please enter a start and end date for the summary.")
+        print("Enter date as YYYYMMDDhhmm")
+        print("Example: 201910310930 is 10/31/2019 at 9:30am")
+        startDate = input("Enter the start date:" )
+        endDate = input("Enter the end date: ")
+    
+    #If user wantes month does billing cycle
+    if interval == 5:
+        print("Please enter a start and end date for the summary.")
+        print("Enter date as YYYYMMDDhhmm")
+        print("Example: 201910310930 is 10/31/2019 at 9:30am")
 
-    startDate = input("Enter the start date:" )
-    endDate = input("Enter the end date: ")
+        print("Please enter a start date for the summary.")
+        startYear = input('Enter year: ')
+        startMonth = input('Enter month: ')
+        startTime = input('Enter time of day: ')
+        startDate = startYear + startMonth + '15' + startTime
+
+        print("Please enter a end date for the summary.")
+        endYear = input('Enter year: ')
+        #----check input----#
+        endMonth = input('Enter month: ')
+        #----check input----#
+        endTime = input('Enter time of day: ')
+        endDate = endYear + endMonth + '14' + endTime
 
     userinput = input("How many meters do you want to pull: ")
     isdigttest = userinput.isdigit()
