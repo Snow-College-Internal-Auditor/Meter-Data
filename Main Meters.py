@@ -70,7 +70,7 @@ def setMeters():
 
 def main():
     repeat = 'y'
-#test for git purposes
+
     while repeat == 'y':
         setMeters()
         repeat = input('Do you want to run another api call? [y/n]: ')
