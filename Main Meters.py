@@ -44,13 +44,12 @@ def setMeters():
     #If user wantes month does billing cycle
     if interval == 5:
         print("Please enter a start and end date for the summary.")
-        print("Enter date as YYYYMMDDhhmm")
-        print("Example: 201910310930 is 10/31/2019 at 9:30am")
 
         print("Please enter a start date for the summary.")
         startYear = input('Enter year: ')
         startMonth = input('Enter month: ')
-        startTime = input('Enter time of day: ')
+        print('Enter time of day in HHMM. Example 0830 for 8:30am')
+        startTime = input('Enter time: ')
         startDate = startYear + startMonth + '15' + startTime
 
         print("Please enter a end date for the summary.")
